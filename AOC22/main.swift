@@ -19,7 +19,10 @@ let path = WD + "day\(day).txt"
 
 if let fileContent = try? String(contentsOfFile: path) {
     switch day {
-        case 1: day1(fileContent: fileContent)
+        case 1: print(day1_1(fileContent: fileContent))
+                print(day1_2(fileContent: fileContent))
+        case 2: print(day2_1(fileContent: fileContent))
+                print(day2_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }
