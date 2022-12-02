@@ -26,5 +26,7 @@ if let fileContent = try? String(contentsOfFile: path) {
         default:
             print("Day not found.")
     }
+} else {
+    print("Input not found")
 }
 
