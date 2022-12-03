@@ -21,9 +21,9 @@ func day2_2(fileContent: String) -> Int {
 
 func _day2(_ values: [Character : Int], _ matchup: [String : Int], fileContent: String) -> Int {
     var score = 0
-    let gmaes = fileContent.components(separatedBy: .newlines)
+    let games = fileContent.components(separatedBy: .newlines)
     
-    for game in gmaes {
+    for game in games {
         score += values[game.last!] ?? 0
         score += matchup[game] ?? 0
     }

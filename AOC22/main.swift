@@ -23,6 +23,8 @@ if let fileContent = try? String(contentsOfFile: path) {
                 print(day1_2(fileContent: fileContent))
         case 2: print(day2_1(fileContent: fileContent))
                 print(day2_2(fileContent: fileContent))
+        case 3: print(day3_1(fileContent: fileContent))
+                print(day3_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }
@@ -30,3 +32,89 @@ if let fileContent = try? String(contentsOfFile: path) {
     print("Input not found")
 }
 
+extension StringProtocol {
+    subscript(offset: Int) -> Character {
+        self[index(startIndex, offsetBy: offset)]
+    }
+    func index<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
+            range(of: string, options: options)?.lowerBound
+    }
+    func endIndex<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
+        range(of: string, options: options)?.upperBound
+    }
+    func indices<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Index] {
+        ranges(of: string, options: options).map(\.lowerBound)
+    }
+    func ranges<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Range<Index>] {
+        var result: [Range<Index>] = []
+        var startIndex = self.startIndex
+        while startIndex < endIndex,
+            let range = self[startIndex...]
+                .range(of: string, options: options) {
+                result.append(range)
+                startIndex = range.lowerBound < range.upperBound ? range.upperBound :
+                    index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
+        }
+        return result
+    }
+}
+
+extension String {
+    func groups(for regex: NSRegularExpression) -> [[String]] {
+        do {
+            let text = self
+            let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+            return matches.map { match in
+                return (0..<match.numberOfRanges).map {
+                    let rangeBounds = match.range(at: $0)
+                    guard let range = Range(rangeBounds, in: text) else {
+                        return ""
+                    }
+                    return String(text[range])
+                }
+            }
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
+}
+
+extension Int {
+    static postfix func ++(i: inout Self) -> Self {
+        let c = i
+        i += 1
+        return c
+    }
+    static prefix func ++(i: inout Self) -> Self {
+        i += 1
+        return i
+    }
+    static postfix func --(i: inout Self) -> Self {
+        let c = i
+        i -= 1
+        return c
+    }
+    static prefix func --(i: inout Self) -> Self {
+        i -= 1
+        return i
+    }
+}
+
+extension Dictionary where Value: Equatable {
+    func someKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
+    }
+}
+
+extension Array where Element: Equatable {
+    func containsParts(_ parts: [Element]) -> Bool {
+        return parts.reduce(true, {acc, element in acc && self.contains(element)})
+    }
+    func get(index: Int) -> Element? {
+        if index >= self.count || index < 0 {
+            return nil
+        }
+        return self[index]
+    }
+}
