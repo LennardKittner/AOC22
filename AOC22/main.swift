@@ -7,6 +7,8 @@
 
 import Foundation
 
+//TODO: remove last new line from input
+
 if CommandLine.argc < 3 {
     print("To few arguemtns.")
     exit(1)
@@ -17,7 +19,11 @@ let WD = CommandLine.arguments[2]
 
 let path = WD + "day\(day).txt"
 
-if let fileContent = try? String(contentsOfFile: path) {
+if var fileContent = try? String(contentsOfFile: path) {
+    if fileContent.last == "\n" || fileContent.last == "\r" {
+        fileContent.popLast()
+    }
+    
     switch day {
         case 1: print(day1_1(fileContent: fileContent))
                 print(day1_2(fileContent: fileContent))
