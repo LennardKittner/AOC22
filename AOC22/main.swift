@@ -7,8 +7,6 @@
 
 import Foundation
 
-//TODO: remove last new line from input
-
 if CommandLine.argc < 3 {
     print("To few arguemtns.")
     exit(1)
@@ -20,8 +18,12 @@ let WD = CommandLine.arguments[2]
 let path = WD + "day\(day).txt"
 
 if var fileContent = try? String(contentsOfFile: path) {
-    if fileContent.last == "\n" || fileContent.last == "\r" {
-        fileContent.popLast()
+    if fileContent.last == "\n" {
+        fileContent.removeLast()
+    }
+    if fileContent.last == "\r" {
+        fileContent.removeLast()
+        fileContent.removeLast()
     }
     
     switch day {
@@ -35,6 +37,8 @@ if var fileContent = try? String(contentsOfFile: path) {
                 print(day4_2(fileContent: fileContent))
         case 5: print(day5_1(fileContent: fileContent))
                 print(day5_2(fileContent: fileContent))
+        case 6: print(day6_1(fileContent: fileContent))
+                print(day6_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }
@@ -71,21 +75,16 @@ extension StringProtocol {
 
 extension String {
     func groups(for regex: NSRegularExpression) -> [[String]] {
-        do {
-            let text = self
-            let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
-            return matches.map { match in
-                return (0..<match.numberOfRanges).map {
-                    let rangeBounds = match.range(at: $0)
-                    guard let range = Range(rangeBounds, in: text) else {
-                        return ""
-                    }
-                    return String(text[range])
+        let text = self
+        let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+        return matches.map { match in
+            return (0..<match.numberOfRanges).map {
+                let rangeBounds = match.range(at: $0)
+                guard let range = Range(rangeBounds, in: text) else {
+                    return ""
                 }
+                return String(text[range])
             }
-        } catch let error {
-            print("invalid regex: \(error.localizedDescription)")
-            return []
         }
     }
 }

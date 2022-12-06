@@ -74,7 +74,7 @@ func day5_2(fileContent: String) -> String {
         
         stacks[to].append(contentsOf: stacks[from][(stacks[from].count-times)..<stacks[from].count])
         for _ in 0..<times {
-            stacks[from].popLast()
+            stacks[from].removeLast()
         }
     }
     var result = ""
