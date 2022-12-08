@@ -25,6 +25,7 @@ if var fileContent = try? String(contentsOfFile: path) {
         fileContent.removeLast()
         fileContent.removeLast()
     }
+    let now = Date().timeIntervalSince1970
     
     switch day {
         case 1: print(day1_1(fileContent: fileContent))
@@ -41,9 +42,12 @@ if var fileContent = try? String(contentsOfFile: path) {
                 print(day6_2(fileContent: fileContent))
         case 7: print(day7_1(fileContent: fileContent))
                 print(day7_2(fileContent: fileContent))
+        case 8: print(day8_1(fileContent: fileContent))
+                print(day8_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }
+    print("Time: \((Date().timeIntervalSince1970 - now) * 1000)ms")
 } else {
     print("Input not found")
 }
