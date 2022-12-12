@@ -50,6 +50,8 @@ if var fileContent = try? String(contentsOfFile: path) {
                  print(day10_2(fileContent: fileContent))
         case 11: print(day11_1(fileContent: fileContent))
                  print(day11_2(fileContent: fileContent))
+        case 12: print(day12_1(fileContent: fileContent))
+                 print(day12_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }
@@ -82,6 +84,12 @@ extension StringProtocol {
                     index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
         }
         return result
+    }
+    func get(index: Int) -> Element? {
+        if index >= self.count || index < 0 {
+            return nil
+        }
+        return self[index]
     }
 }
 
