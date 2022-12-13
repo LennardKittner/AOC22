@@ -20,6 +20,7 @@
 		DBE2FC212944A50800917105 /* day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC202944A50800917105 /* day10.swift */; };
 		DBE2FC232946002600917105 /* day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC222946002600917105 /* day11.swift */; };
 		DBE2FC25294716A000917105 /* day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC24294716A000917105 /* day12.swift */; };
+		DBE2FC27294865A900917105 /* day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC26294865A900917105 /* day13.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		DBE2FC202944A50800917105 /* day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day10.swift; sourceTree = "<group>"; };
 		DBE2FC222946002600917105 /* day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day11.swift; sourceTree = "<group>"; };
 		DBE2FC24294716A000917105 /* day12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day12.swift; sourceTree = "<group>"; };
+		DBE2FC26294865A900917105 /* day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day13.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				DBE2FC202944A50800917105 /* day10.swift */,
 				DBE2FC222946002600917105 /* day11.swift */,
 				DBE2FC24294716A000917105 /* day12.swift */,
+				DBE2FC26294865A900917105 /* day13.swift */,
 			);
 			path = AOC22;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				DBE2FC212944A50800917105 /* day10.swift in Sources */,
 				DBE2FC1D2941DEEB00917105 /* day8.swift in Sources */,
 				DBE2FC1F294322CA00917105 /* day9.swift in Sources */,
+				DBE2FC27294865A900917105 /* day13.swift in Sources */,
 				DB58734D2937F28D00D64912 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

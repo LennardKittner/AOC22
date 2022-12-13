@@ -6,7 +6,7 @@
 //
 
 import Foundation
-//12min + 9:35
+
 func day12_1(fileContent: String) -> Int {
     let grid :[[Character]] = fileContent.components(separatedBy: .newlines).map({line in line.reduce([], {acc, s in
         var a = acc
@@ -60,7 +60,7 @@ func day12_1(fileContent: String) -> Int {
         }
     }
     
-    return distance[cordToInt(e)]!
+    return distance[cordToInt(e)] ?? -1
 }
 
 func day12_2(fileContent: String) -> Int {

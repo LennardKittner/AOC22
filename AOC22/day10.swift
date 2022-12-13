@@ -41,7 +41,7 @@ func day10_1(fileContent: String) -> Int {
     return signal
 }
 
-func day10_2(fileContent: String) -> Int {
+func day10_2(fileContent: String) -> String {
     let instructions = fileContent.components(separatedBy: .newlines).map({line in
         let args = line.components(separatedBy: " ")
         return (cmd: args[0], lit: Int(args.last ?? "0") ?? 0)
@@ -70,10 +70,9 @@ func day10_2(fileContent: String) -> Int {
         }
         crt[(cycle-1) / 40][(cycle-1) % 40] = abs((cycle-1) % 40 - x) < 2 ? true : false
     }
-    print(crt.reduce("", {acc, line in
+    return (crt.reduce("", {acc, line in
         acc + line.reduce("", {a, c in
             a + (c ? "#" : ".")
         }) + "\n"
     }))
-    return 0
 }
