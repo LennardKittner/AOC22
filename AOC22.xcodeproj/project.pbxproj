@@ -21,6 +21,7 @@
 		DBE2FC232946002600917105 /* day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC222946002600917105 /* day11.swift */; };
 		DBE2FC25294716A000917105 /* day12.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC24294716A000917105 /* day12.swift */; };
 		DBE2FC27294865A900917105 /* day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC26294865A900917105 /* day13.swift */; };
+		DBE2FC292949B48D00917105 /* day14.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE2FC282949B48D00917105 /* day14.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		DBE2FC222946002600917105 /* day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day11.swift; sourceTree = "<group>"; };
 		DBE2FC24294716A000917105 /* day12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day12.swift; sourceTree = "<group>"; };
 		DBE2FC26294865A900917105 /* day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day13.swift; sourceTree = "<group>"; };
+		DBE2FC282949B48D00917105 /* day14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day14.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				DBE2FC222946002600917105 /* day11.swift */,
 				DBE2FC24294716A000917105 /* day12.swift */,
 				DBE2FC26294865A900917105 /* day13.swift */,
+				DBE2FC282949B48D00917105 /* day14.swift */,
 			);
 			path = AOC22;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				DB58735E293F2E9300D64912 /* day6.swift in Sources */,
 				DB58735A293CAE1A00D64912 /* day4.swift in Sources */,
 				DBE2FC25294716A000917105 /* day12.swift in Sources */,
+				DBE2FC292949B48D00917105 /* day14.swift in Sources */,
 				DB58735C293DE49B00D64912 /* day5.swift in Sources */,
 				DBE2FC212944A50800917105 /* day10.swift in Sources */,
 				DBE2FC1D2941DEEB00917105 /* day8.swift in Sources */,
