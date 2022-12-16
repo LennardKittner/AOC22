@@ -56,6 +56,10 @@ if var fileContent = try? String(contentsOfFile: path) {
                  print(day13_2(fileContent: fileContent))
         case 14: print(day14_1(fileContent: fileContent))
                  print(day14_2(fileContent: fileContent))
+        case 15: print(day15_1(fileContent: fileContent))
+                 print(day15_2(fileContent: fileContent))
+        case 16: print(day16_1(fileContent: fileContent))
+                 print(day16_2(fileContent: fileContent))
         default:
             print("Day not found.")
     }

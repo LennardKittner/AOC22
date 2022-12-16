@@ -61,14 +61,19 @@ func day14_1(fileContent: String) -> Int {
         sandCount += 1
     }
     /*
-    for y in 0...9 {
+    for y in 0...200 {
         var row = ""
-        for x in 494...503 {
-            row += grid[x][y].description
+        for x in 450...800 {
+            if grid[x][y] == airT {
+                row += "."
+            } else if grid[x][y] == rockT {
+                row += "#"
+            } else if grid[x][y] == restedSandT {
+                row += "o"
+            }
         }
         print(row)
-    }
-     */
+    }*/
     return sandCount
 }
 
